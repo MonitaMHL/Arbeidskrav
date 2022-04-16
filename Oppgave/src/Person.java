@@ -1,44 +1,41 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.text.MessageFormat;
 
 public class Person {
-    public int teller = 0;
+
+    private final int id;
     private String name;
     private int birthYear;
-    List<Cars> cars= new ArrayList<>();
 
+    static int nextId = 1;
 
-
-
-
-    Person(int customerID, String name, int birthYear, List<Cars> cars) {
-        this.teller = customerID;
+    public Person( String name, int birthYear) {
+        this.id = nextId++;
         this.name = name;
         this.birthYear = birthYear;
-        for (Cars car : this.cars) {
-
-
-        }
-
-
     }
+    public Person() {
+        id = nextId++;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
+
     public int getBirthYear() {
         return birthYear;
     }
-    public int getCustomerID() {
-        teller++;
-        return teller;
-    }
 
-    public List<Cars> getCars() {
-        return cars;
-    }
-    void show() {
-        System.out.println("Customer ID: " + getCustomerID() + "\n" + "Name: " + getName() + "\n" + "Birthyear: "
-                + getBirthYear() + "\n" + "Cars: " + getCars() );
 
+    public void display() {
+        System.out.println("Person");
+        System.out.println("\tid: " + getId());
+        System.out.println("\tName: " + getName());
+        System.out.println("\tYear of birth: " + getBirthYear());
+        System.out.println("\tCars:");
     }
 }
+

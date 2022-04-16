@@ -1,6 +1,10 @@
 public class Arbeidskrav_1 {
     public static void main(String[] args) {
-        //final CarSystem carSystem = CarSystem.create();
-        //System.out.println(carSystem);
+        CarSystem carSystem = new CarSystem();
+        carSystem.create();
+        carSystem.display();
+        carSystem.displayAverageAgePerson();
+        carSystem.displayAverageCarAge();
+        carSystem.displayAverageCarMilage();
     }
 }
